@@ -1,0 +1,48 @@
+# Node modules
+node_modules/
+
+# Env files (NUNCA subir isso!)
+.env
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Editor e SO
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Coverage/test
+coverage/
+.nyc_output/
+
+# Build/cache
+dist/
+.cache/
+.next/
+out/
+build/
+
+# Sequelize CLI migrations (opcional)
+migrations/
+seeders/
+models/index.js
+
+# Railway local DB configs (se usar futuramente)
+railway/
+
+# Others
+.env.local
+.env.*.local
