@@ -1,10 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const produtoController = require('../controllers/produtoController');
+
+// Importando os módulos de rotas
+const produtoRoutes = require('./produtoRoutes');
+const vendaRoutes = require('./vendasRoutes');
 
 
-// Rotas para produtos
-router.post('/produtos', produtoController.criar);
-router.get('/produtos', produtoController.listar);
+// Rotas
+router.use('/produtos', produtoRoutes);
+router.use('/vendas', vendaRoutes);
 
 module.exports = router;

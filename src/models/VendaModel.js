@@ -1,9 +1,8 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
-const Produto = require('./Produto');
-const { FOREIGNKEYS } = require('sequelize/lib/query-types');
+const ProdutoModel = require('./ProdutoModel');
 
-const Venda = sequelize.define('Venda', {
+const VendaModel = sequelize.define('Venda', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -26,7 +25,7 @@ const Venda = sequelize.define('Venda', {
 });
 
 // Relacionamento: uma venda pertence a um produto
-Produto.hasMany(Venda, {foreignKey: 'produto_id'});
-Venda.belongsTo(Produto, {foreignKey: 'produto_id'});
+ProdutoModel.hasMany(VendaModel, { foreignKey: 'produto_id' });
+VendaModel.belongsTo(ProdutoModel, { foreignKey: 'produto_id' });
 
-module.exports = Venda;
+module.exports = VendaModel;

@@ -1,10 +1,10 @@
-const Produto = require('../models/Produto');
+const ProdutoModel = require('../models/ProdutoModel');
 
 module.exports = {
     async criar(req, res) {
         try {
             const { nome, preco, quantidade_em_estoque, sku } = req.body;
-            const produto = await Produto.create({
+            const produto = await ProdutoModel.create({
                 nome,
                 preco,
                 quantidade_em_estoque,
@@ -18,11 +18,11 @@ module.exports = {
     },
 
     async listar(__, res) {
-    try {
-        const produtos = await Produto.findAll();
-        res.json(produtos);
-    } catch (error) {
-        res.status(500).json({ error: 'Erro ao listar produtos' });
+        try {
+            const produtos = await ProdutoModel.findAll();
+            res.json(produtos);
+        } catch (error) {
+            res.status(500).json({ error: 'Erro ao listar produtos' });
+        }
     }
-}
 };
